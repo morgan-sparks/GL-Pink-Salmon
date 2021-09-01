@@ -15,3 +15,4 @@ The goal is to compare the whole genomes of Pink salmon that were introduced int
 | Steel even 2-yr | 30         |
 | Total | 134                  |
 
+Samples sequenced by IUPUI cancer genome center

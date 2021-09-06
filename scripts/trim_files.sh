@@ -2,7 +2,7 @@
 #SBATCH --job-name=name
 #SBATCH -A beagle
 #SBATCH -N 1
-#SBATCH -n 10
+#SBATCH -n 20
 #SBATCH -t 300:00:00
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=sparks35@purdue.edu

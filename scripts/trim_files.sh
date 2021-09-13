@@ -23,7 +23,8 @@ FASTQC_OUT=$OUTPUT/trimmed_fastQC/
 
 while read -a line
 do
-  trimmomatic PE -phred33 -threads 20\ #### run 1 reads ###
+ #### run 1 reads ###
+  trimmomatic PE -phred33 -threads 20\
   $RAWDATA/${line[0]}*R1*run1.fastq \
   $RAWDATA/${line[0]}*R2*run1.fastq \
   $OUPUT/trimmed_paired_${line[0]}_R1_run1.fastq \
@@ -33,7 +34,8 @@ do
   LEADING:20 TRAILING:20 MINLEN:30 \
   ILLUMINACLIP:/scratch/bell/sparks35/GL_Pink_Salmon/data/IUPUI_adapter.fa:2:40:10
   
-  trimmomatic PE -phred33 -threads 20 \ #### run 2 reads ###
+  #### run 2 reads ###
+  trimmomatic PE -phred33 -threads 20 \
   $RAWDATA/${line[0]}*R1*run2.fastq \
   $RAWDATA/${line[0]}*R2*run2.fastq \
   $OUPUT/trimmed_paired_${line[0]}_R1_run2.fastq \

@@ -27,10 +27,10 @@ do
   trimmomatic PE -phred33 -threads 20\
   $RAWDATA/${line[0]}*R1*run1.fastq \
   $RAWDATA/${line[0]}*R2*run1.fastq \
-  $OUPUT/trimmed_paired_${line[0]}_R1_run1.fastq \
-  $OUPUT/trimmed_unpaired_${line[0]}_R1_run1.fastq \
-  $OUPUT/trimmed_paired_${line[0]}_R2_run1.fastq \
-  $OUPUT/trimmed_unpaired_${line[0]}_R2_run1.fastq \
+  $OUTPUT/trimmed_paired_${line[0]}_R1_run1.fastq \
+  $OUTPUT/trimmed_unpaired_${line[0]}_R1_run1.fastq \
+  $OUTPUT/trimmed_paired_${line[0]}_R2_run1.fastq \
+  $OUTPUT/trimmed_unpaired_${line[0]}_R2_run1.fastq \
   LEADING:20 TRAILING:20 MINLEN:30 \
   ILLUMINACLIP:/scratch/bell/sparks35/GL_Pink_Salmon/data/IUPUI_adapter.fa:2:40:10
   
@@ -38,10 +38,10 @@ do
   trimmomatic PE -phred33 -threads 20 \
   $RAWDATA/${line[0]}*R1*run2.fastq \
   $RAWDATA/${line[0]}*R2*run2.fastq \
-  $OUPUT/trimmed_paired_${line[0]}_R1_run2.fastq \
-  $OUPUT/trimmed_unpaired_${line[0]}_R1_run2.fastq \
-  $OUPUT/trimmed_paired_${line[0]}_R2_run2.fastq \
-  $OUPUT/trimmed_unpaired_${line[0]}_R2_run2.fastq \
+  $OUTPUT/trimmed_paired_${line[0]}_R1_run2.fastq \
+  $OUTPUT/trimmed_unpaired_${line[0]}_R1_run2.fastq \
+  $OUTPUT/trimmed_paired_${line[0]}_R2_run2.fastq \
+  $OUTPUT/trimmed_unpaired_${line[0]}_R2_run2.fastq \
   LEADING:20 TRAILING:20 MINLEN:30 \
   ILLUMINACLIP:/scratch/bell/sparks35/GL_Pink_Salmon/data/IUPUI_adapter.fa:2:40:10
   

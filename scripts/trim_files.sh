@@ -18,7 +18,7 @@ module load MultiQC/1.8 # version 1.8
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
 RAWDATA=$PROJHOME/raw_data
 OUTPUT=$PROJHOME/data/seqs/trimmed_seqs
-FASTQC_OUT=$OUTPUT/trimmed_fastQC
+FASTQC_OUT=$OUTPUT/trimmed_fastQC/
 
 
 # while read -a line
@@ -58,4 +58,4 @@ FASTQC_OUT=$OUTPUT/trimmed_fastQC
 #   $OUTPUT/trimmed_unpaired_${line[0]}_R2_run2.fastq 
 # done < $PROJHOME/data/sample_names.txt
 
-multiqc $FASTQC_OUT/trimmed_paired*.fastq
+multiqc $OUTPUT/trimmed_paired*.fastq

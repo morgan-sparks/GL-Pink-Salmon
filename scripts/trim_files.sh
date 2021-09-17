@@ -58,4 +58,4 @@ FASTQC_OUT=$OUTPUT/trimmed_fastQC/
 #   $OUTPUT/trimmed_unpaired_${line[0]}_R2_run2.fastq 
 # done < $PROJHOME/data/sample_names.txt
 
-multiqc $OUTPUT/trimmed_paired*.fastq
+multiqc /scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/trimmed_seqs/trimmed_fastQC/trimmed_paired*

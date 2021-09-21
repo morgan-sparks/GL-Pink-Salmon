@@ -16,8 +16,12 @@ module load bwa/0.7.17 #bwa version 0.7.17
 
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
 
+### run bwa index 
+cd $PROJHOME/data/seqs/aligned_reads_Ogor1.0/
 
+bwa index $PROJHOME/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna
 
+### loop over files to align reads to genome
 while read -a line
 do
 

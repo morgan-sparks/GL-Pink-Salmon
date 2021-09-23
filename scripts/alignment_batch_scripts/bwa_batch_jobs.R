@@ -30,6 +30,8 @@ for(z in 1:length(runs)){ #iterate over run1 and run2
     "module load bioinfo",
     "module load bwa/0.7.17",
     "",
+    "PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon",
+    "",
     "cd $PROJHOME/data/seqs/aligned_reads_Ogor1.0/",
     "",
     paste("bwa mem -t 10 -M $PROJHOME/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna $PROJHOME/data/seqs/trimmed_seqs/trimmed_paired_",x,"_R1_",z,".fastq"," ","$PROJHOME/data/seqs/trimmed_seqs/trimmed_paired_",x,"_R2_",z,".fastq"," ","> $PROJHOME/data/seqs/aligned_reads_Ogor1.0/batch_output/",x,"_",z,"_Ogor1.0_aligned.sam", sep = "")

@@ -26,6 +26,8 @@ for(z in 1:length(runs)){ #iterate over run1 and run2
     "#SBATCH -t 4:00:00",
     "#SBATCH -N 1",
     "#SBATCH -n 126",
+    "#SBATCH --mail-type=FAIL",
+    "#SBATCH --mail-user=sparks35@purdue.edu",
     "",
     "module purge",
     "module load bioinfo",

@@ -37,7 +37,7 @@ for(z in 1:length(runs)){ #iterate over run1 and run2
     "",
     "cd $PROJHOME/data/seqs/aligned_reads_Ogor1.0/",
     "",
-    paste("bwa mem -t 126 -M $PROJHOME/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna $PROJHOME/data/seqs/trimmed_seqs/trimmed_paired_",x,"_R1_",z,".fastq"," ","$PROJHOME/data/seqs/trimmed_seqs/trimmed_paired_",x,"_R2_",z,".fastq"," ","> $PROJHOME/data/seqs/aligned_reads_Ogor1.0/batch_output/",x,"_",z,"_Ogor1.0_aligned.sam", sep = "")
+    paste("bwa mem -t 126 -M $PROJHOME/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna $PROJHOME/data/seqs/trimmed_seqs/trimmed_paired_",x,"_R1_",z,".fastq"," ","$PROJHOME/data/seqs/trimmed_seqs/trimmed_paired_",x,"_R2_",z,".fastq"," ","> $PROJHOME/data/seqs/aligned_reads_Ogor1.0/batch_output/",x,"_",z,"_Ogor1.0_aligned.bam", sep = "")
     )
   
   writeLines(file_1, paste("align_",x,"_",z,".sh", sep = ""))

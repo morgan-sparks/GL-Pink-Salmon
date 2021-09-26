@@ -40,7 +40,7 @@ for(z in 1:length(runs)){ #iterate over run1 and run2
       "",
       "",
       
-      paste("java -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar AddOrReplaceReadGroups \\"),
+      paste("java -Xmx250g -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar AddOrReplaceReadGroups \\"),
       paste("I=$ALIGNED/", x,"_", z,"_Ogor1.0_aligned.bam \\", sep = ""),
       paste("O=$RGADD/", x,"_", z,"_Ogor1.0_addedRG.bam \\", sep = "" ),
       paste("SORT_ORDER=coordinate RGID=group1 RGLB=lib1 RGPL=illumina RGSM=", x," RGPU=", z, sep = "")

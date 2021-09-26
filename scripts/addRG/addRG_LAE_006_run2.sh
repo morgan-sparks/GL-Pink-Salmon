@@ -17,7 +17,7 @@ ALIGNED=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/ba
 RGADD=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/addedRG_bam
 
 
-java -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar AddOrReplaceReadGroups \
+java -Xmx250g -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar AddOrReplaceReadGroups \
 I=$ALIGNED/LAE_006_run2_Ogor1.0_aligned.bam \
 O=$RGADD/LAE_006_run2_Ogor1.0_addedRG.bam \
 SORT_ORDER=coordinate RGID=group1 RGLB=lib1 RGPL=illumina RGSM=LAE_006 RGPU=run2

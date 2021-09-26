@@ -6,7 +6,7 @@
 #============================================================================================================#
 
 
-setwd("~/GL-Pink-Salmon/scripts/alignment_batch_scripts/")
+setwd("~/GL-Pink-Salmon/scripts/addRG//")
 
 file_names <- read.table("~/GL-Pink-Salmon/data/sample_names.txt", sep ="\r", header = FALSE)
 file_names <- as.vector(as.character(file_names[,1]))

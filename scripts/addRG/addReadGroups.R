@@ -16,7 +16,7 @@ runs <- c("run1", "run2")
 for(z in 1:length(runs)){ #iterate over run1 and run2
   z <- noquote(runs[z])
  
-   for(x in c(1:2)){ # iterate over file names
+   for(x in c(1:length(file_names))){ # iterate over file names
     x <- noquote(file_names[x])
     
     file_1 <- rbind(

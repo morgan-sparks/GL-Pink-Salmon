@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=mergebams_STL_331
+#SBATCH --job-name=mergebams_STL_017
 #SBATCH -A standby
 #SBATCH -t 4:00:00
 #SBATCH -N 1
@@ -19,9 +19,9 @@ MERGED=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/mer
 
 
 java -Xmx250g -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar MergeSamFiles \
-I=$ADDRG/STL_331_run1_Ogor1.0_addedRG.bam \
-I=$ADDRG/STL_331_run2_Ogor1.0_addedRG.bam \
+I=$ADDRG/STL_017_run1_Ogor1.0_addedRG.bam \
+I=$ADDRG/STL_017_run2_Ogor1.0_addedRG.bam \
 SORT_ORDER=coordinate \
-O=$MERGED/STL_331_Ogor1.0_merged.bam
+O=$MERGED/STL_017_Ogor1.0_merged.bam
 
-samtools flagstat -@ 126 -O tsv $MERGED/STL_331_Ogor1.0_merged.bam > $MERGED/merged_flagstat/STL_331_rgroups_flagstat_out.txt
+samtools flagstat -@ 126 -O tsv $MERGED/STL_017_Ogor1.0_merged.bam > $MERGED/merged_flagstat/STL_017_rgroups_flagstat_out.txt

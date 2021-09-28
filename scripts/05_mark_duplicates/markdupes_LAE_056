@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH --job-name=markdupes_LAE_056
+#SBATCH -A standby
+#SBATCH -t 4:00:00
+#SBATCH -N 1
+#SBATCH -n 126
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-user=sparks35@purdue.edu
+
+module purge
+module load bioinfo
+module load picard-tools/2.20.8
+
+
+PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
+MDUPES=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/mark_dupes
+MERGED=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/merged_bams
+
+
+
+java -Xmx250g -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar MarkDuplicates \
+I=$MERGED/LAE_056_Ogor1.0_merged.bam \
+O=$MDUPES/LAE_056_Ogor1.0_dupmarked.bam \
+M=$MDUPES/metrics_out/LAE_056_Ogor1.0_dupmarked_metrics.txt \
+MAX_RECORDS_IN_RAM=250000

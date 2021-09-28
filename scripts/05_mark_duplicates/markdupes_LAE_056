@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH --job-name=markdupes_LAE_056
-#SBATCH -A standby
-#SBATCH -t 4:00:00
+#SBATCH -A highmem
+#SBATCH -t 24:00:00
 #SBATCH -N 1
 #SBATCH -n 126
 #SBATCH --mail-type=FAIL

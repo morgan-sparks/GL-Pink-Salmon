@@ -54,7 +54,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",a,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",a,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",a,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
     
     "#process 2",
@@ -62,7 +62,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",b,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",b,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",b,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
    
     "#process 3",
@@ -70,14 +70,14 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",c,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",c,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",c,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
     "#process 4",
     paste("/home/sparks35/gatk-4.2.2.0/gatk --java-options \"-Xmx80G -DGATK_STACKTRACE_ON_USER_EXCEPTION=true -Djava.io.tmpdir=/scratch/bell/sparks35/tmpdir\" MarkDuplicatesSpark \\"),
     paste("I=$MERGED/",d,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",d,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",d,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
     
     "#process 5",
@@ -85,7 +85,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",e,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",e,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",e,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
     
     "#process 6",
@@ -93,7 +93,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",f,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",f,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",f,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
     
     "#process 7",
@@ -101,7 +101,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",g,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",g,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",g,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 11",
+    "--conf 'spark.executor.cores=11'",
     "",
     
     "#process 8",
@@ -109,7 +109,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",h,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",h,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",h,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 10",
+    "--conf 'spark.executor.cores=10'",
     "",
     
     "#process 9",
@@ -117,7 +117,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",i,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",i,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",i,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 10",
+    "--conf 'spark.executor.cores=10'",
     "",
     
     "#process 10",
@@ -125,7 +125,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",j,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",j,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",j,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 10",
+    "--conf 'spark.executor.cores=10'",
     "",
     
     "#process 11",
@@ -133,7 +133,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",k,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",k,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",k,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 10",
+    "--conf 'spark.executor.cores=10'",
     "",
     
     "#process 12",
@@ -141,7 +141,7 @@ while(x <= 12){ # iterate over file names
     paste("I=$MERGED/",l,"_Ogor1.0_merged.bam \\", sep = ""),
     paste("O=$MDUPES/spark_out/",l,"_Ogor1.0_dupmarked.bam\\", sep = ""),
     paste("M=$MDUPES/metrics_out/",l,"_Ogor1.0_dupmarked_metrics.txt \\"),
-    "-executor-cores 10",
+    "--conf 'spark.executor.cores=10'",
     ""
     
    

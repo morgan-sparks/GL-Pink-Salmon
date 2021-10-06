@@ -17,8 +17,8 @@ while read -a line
 do
 /home/sparks35/gatk-4.2.2.0/gatk --java-options "-Xmx9g -Djava.io.tmpdir=/scratch/bell/sparks35/tmpdir" HaplotypeCaller \
 -I $MDUPES/LAE_056_Ogor1.0_dupmarked.bam \
--O $HAPCALLS/LAE_056_Ogor1.0.gz \
+-O $HAPCALLS/LAE_056_Ogor1.0.vcf.gz \
 -R $ASSEMBLY \
 -ERC GVCF \
 -L ${line[0]}
-done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt 
+& done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt 

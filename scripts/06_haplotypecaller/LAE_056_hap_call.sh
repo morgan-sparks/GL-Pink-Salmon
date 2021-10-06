@@ -20,5 +20,5 @@ do
 -O $HAPCALLS/LAE_056_Ogor1.0.vcf.gz \
 -R $ASSEMBLY \
 -ERC GVCF \
--L ${line[0]} \
-& done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt 
+-L ${line[0]}
+done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt 

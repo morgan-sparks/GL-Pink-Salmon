@@ -21,7 +21,7 @@ cd $PROJHOME/data/assemblies/Ogor_1.0/
 
 #samtools faidx GCA_017355495.1_Ogor_1.0_genomic.fna
 
-java -jar picard.jar CreateSequenceDictionary \
+java -Xmx250g -jar /group/bioinfo/apps/apps/picard-tools-2.9.0/picard.jar CreateSequenceDictionary \
 R=GCA_017355495.1_Ogor_1.0_genomic.fna \
 O=GCA_017355495.1_Ogor_1.0_genomic.fna.dict
 

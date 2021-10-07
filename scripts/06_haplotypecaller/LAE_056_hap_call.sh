@@ -8,10 +8,6 @@
 #SBATCH --mail-user=sparks35@purdue.edu
 
 module purge
-module load bioinfo
-module load samtools
-
-samtools index /scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/mark_dupes/LAE_056_Ogor1.0_dupmarked.bam
 
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon/
 ASSEMBLY=/scratch/bell/sparks35/GL_Pink_Salmon/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna

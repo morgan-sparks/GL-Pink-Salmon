@@ -9,22 +9,11 @@
 
 module purge
 module load bioinfo
-module load samtools
-module load picard-tools/2.20.8
 
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon/
 ASSEMBLY=/scratch/bell/sparks35/GL_Pink_Salmon/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna
 MDUPES=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/mark_dupes
 HAPCALLS=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/06_hap_calls
-
-cd $PROJHOME/data/assemblies/Ogor_1.0/
-
-#samtools faidx GCA_017355495.1_Ogor_1.0_genomic.fna
-
-java -Xmx250g -jar /group/bioinfo/apps/apps/picard-tools-2.20.8/picard.jar CreateSequenceDictionary \
-R=GCA_017355495.1_Ogor_1.0_genomic.fna \
-O=GCA_017355495.1_Ogor_1.0_genomic.fna.dict
-
 
 while read -a line
 do

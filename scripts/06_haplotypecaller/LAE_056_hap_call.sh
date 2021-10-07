@@ -10,6 +10,7 @@
 module purge
 module load bioinfo
 module load samtools
+module load picard-tools
 
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon/
 ASSEMBLY=/scratch/bell/sparks35/GL_Pink_Salmon/data/assemblies/Ogor_1.0/GCA_017355495.1_Ogor_1.0_genomic.fna
@@ -18,7 +19,12 @@ HAPCALLS=/scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/0
 
 cd $PROJHOME/data/assemblies/Ogor_1.0/
 
-samtools faidx GCA_017355495.1_Ogor_1.0_genomic.fna
+#samtools faidx GCA_017355495.1_Ogor_1.0_genomic.fna
+
+java -jar picard.jar CreateSequenceDictionary \
+R=GCA_017355495.1_Ogor_1.0_genomic.fna \
+O=GCA_017355495.1_Ogor_1.0_genomic.fna.dict
+
 
 while read -a line
 do

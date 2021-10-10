@@ -1,7 +1,8 @@
 #=============================================================================================================#
 # Script created by Morgan Sparks
-# This script: uses 2 loops to write out job submission files iterating over samples names and runs for 
-# to add Read Groups using picard tools to aligned bam files.
+# This script: uses a loop to loop file names to output a bash script that call haplotypecaller
+# from GATK. The script loops through chromosomes of pink salmon to call haplotypes in a vcf file
+# and then concatenates those into a single file at the end of the script with bcftools.
 # Usage notes: 
 #============================================================================================================#
 
@@ -13,7 +14,7 @@ file_names <- as.vector(as.character(file_names[,1]))
 
 
 
-for(x in c(1:4)){ # iterate over file names
+for(x in c(1:length(file_names))){ # iterate over file names
   x <- noquote(file_names[x])
   
   file_1 <- rbind(

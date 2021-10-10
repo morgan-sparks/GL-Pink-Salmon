@@ -16,7 +16,7 @@ do
 --genomicsdb-workspace-path $PROJHOME/data/seqs/aligned_reads_Ogor1.0/07_genomicsDB/${line[0]}_database \
 --batch-size 50 \
 -L ${line[0]} \
---sample-name-map $PROJHOME/scripts/07_GenomicsDBImport/genomicsDB.tsv \
+--sample-name-map $PROJHOME/scripts/07_GenomicsDBImport/genomicsDB2.txt \
 --tmp-dir tmpdir \
 --reader-threads 4 &
 done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt

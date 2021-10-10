@@ -9,7 +9,7 @@
 
 module purgue
 module load bioinfo
-modul load bcftools/1.11
+module load bcftools/1.11
 
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
 

@@ -17,7 +17,7 @@ do
 --batch-size 50 \
 -L ${line[0]} \
 --sample-name-map $PROJHOME/scripts/07_GenomicsDBImport/genomicsDB.tsv \
---tmp-dir=scratch/bell/sparks35/tmpdir \
+--tmp-dir scratch/bell/sparks35/tmpdir \
 --reader-threads 4 &
 done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt
 wait

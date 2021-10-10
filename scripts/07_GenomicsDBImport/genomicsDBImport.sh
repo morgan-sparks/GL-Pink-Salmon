@@ -13,7 +13,7 @@ PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
 while read -a line
 do
 /home/sparks35/gatk-4.2.2.0/gatk --java-options "-Xmx36g -Xms36g" GenomicsDBImport \
---$PROJHOME/data/seqs/aligned_reads_Ogor1.0/07_genomicsDB my_database \
+--$PROJHOME/data/seqs/aligned_reads_Ogor1.0/07_genomicsDB ${line[0]}_database \
 --batch-size 50 \
 -L ${line[0]} \
 --sample-name-map $PROJHOME/scripts/07_GenomicsDBImport/genomicsDB.tsv \

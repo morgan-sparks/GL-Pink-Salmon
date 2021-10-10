@@ -16,4 +16,4 @@ PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
 while read -a line
 do
 bcftools index $PROJHOME/data/seqs/aligned_reads_Ogor1.0/06_hap_calls/${line[0]}_Ogor1.0_hapcalls.vcf.gz
-done <$PROJHOME/data/population_lists/sample_names.txt
+done <$PROJHOME/data/population_lists/finish_index.txt

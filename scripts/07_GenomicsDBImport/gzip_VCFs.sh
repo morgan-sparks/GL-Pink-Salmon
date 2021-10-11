@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=index_VCFs
+#SBATCH --job-name=gzip_VCFs
 #SBATCH -A standby
 #SBATCH -N 1
 #SBATCH -n 126

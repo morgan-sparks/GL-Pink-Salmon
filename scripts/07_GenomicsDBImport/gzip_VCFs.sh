@@ -17,9 +17,6 @@ HAPCALLS=$PROJHOME/data/seqs/aligned_reads_Ogor1.0/06_hap_calls
 
 while read -a line
 do
-bgzip -d --threads 4 $HAPCALLS/${line[0]}_Ogor1.0_hapcalls.vcf.gz &
+bgzip --threads 4 $HAPCALLS/${line[0]}_Ogor1.0_hapcalls.vcf &
 done <$PROJHOME/data/population_lists/sample_names.txt
 wait
-
-
-

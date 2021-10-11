@@ -10,15 +10,16 @@
 module purgue
 module load bioinfo
 module load bcftools/1.11
+module load sa
 
 PROJHOME=/scratch/bell/sparks35/GL_Pink_Salmon
 HAPCALLS=$PROJHOME/data/seqs/aligned_reads_Ogor1.0/06_hap_calls
 
 while read -a line
 do
-bcftools view --threads 4 \
--I $HAPCALLS/${line[0]}_Ogor1.0_hapcalls.vcf.gz \
--Oz -o $HAPCALLS/${line[0]}_Ogor1.0_hapcalls.vcf.gz &
-done <$PROJHOME/data/population_lists/ample_names.txt
+bgzip -d --threads 4 $HAPCALLS/${line[0]}_Ogor1.0_hapcalls.vcf.gz &
+done <$PROJHOME/data/population_lists/sample_names.txt
 wait
+
+
 

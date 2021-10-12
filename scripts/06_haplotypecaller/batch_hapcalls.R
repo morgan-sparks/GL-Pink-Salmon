@@ -50,7 +50,7 @@ for(x in c(1:length(file_names))){ # iterate over file names
     "-L ${line[0]} &",
     "done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt",
     "wait",
-    "",
+    ""
     
     # "cd /scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/06_hap_calls",
     # "",

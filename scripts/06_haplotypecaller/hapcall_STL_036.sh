@@ -30,17 +30,3 @@ do
 done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt
 wait
 
-cd /scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/06_hap_calls
-
-bcftools concat -Oz \
-CM029847.1_STL_036_Ogor1.0.vcf.gz CM029861.1_STL_036_Ogor1.0.vcf.gz CM029848.1_STL_036_Ogor1.0.vcf.gz CM029862.1_STL_036_Ogor1.0.vcf.gz \
-CM029849.1_STL_036_Ogor1.0.vcf.gz CM029863.1_STL_036_Ogor1.0.vcf.gz CM029850.1_STL_036_Ogor1.0.vcf.gz CM029864.1_STL_036_Ogor1.0.vcf.gz \
-CM029851.1_STL_036_Ogor1.0.vcf.gz CM029865.1_STL_036_Ogor1.0.vcf.gz CM029852.1_STL_036_Ogor1.0.vcf.gz CM029866.1_STL_036_Ogor1.0.vcf.gz \
-CM029853.1_STL_036_Ogor1.0.vcf.gz CM029867.1_STL_036_Ogor1.0.vcf.gz CM029854.1_STL_036_Ogor1.0.vcf.gz CM029868.1_STL_036_Ogor1.0.vcf.gz \
-CM029855.1_STL_036_Ogor1.0.vcf.gz CM029869.1_STL_036_Ogor1.0.vcf.gz CM029856.1_STL_036_Ogor1.0.vcf.gz CM029870.1_STL_036_Ogor1.0.vcf.gz \
-CM029857.1_STL_036_Ogor1.0.vcf.gz CM029871.1_STL_036_Ogor1.0.vcf.gz CM029858.1_STL_036_Ogor1.0.vcf.gz CM029872.1_STL_036_Ogor1.0.vcf.gz \
-CM029859.1_STL_036_Ogor1.0.vcf.gz CM029873.1_STL_036_Ogor1.0.vcf.gz CM029860.1_STL_036_Ogor1.0.vcf.gz > STL_036_Ogor1.0_hapcalls.vcf.gz
-
-tabix --csi STL_036_Ogor1.0_hapcalls.vcf.gz
-
-rm -rf CM*STL_036*

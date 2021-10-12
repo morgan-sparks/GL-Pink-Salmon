@@ -44,28 +44,27 @@ for(x in c(1:length(file_names))){ # iterate over file names
     "do",
     "/home/sparks35/gatk-4.2.2.0/gatk --java-options \"-Xmx9g -Djava.io.tmpdir=/scratch/bell/sparks35/tmpdir\" HaplotypeCaller \\",
     paste("-I $MDUPES/", x, "_Ogor1.0_dupmarked.bam \\", sep = ""),
-    paste("-O $HAPCALLS/${line[0]}_",x, "_Ogor1.0.vcf.gz \\", sep = ""),
+    paste("-O $HAPCALLS/${line[0]}_",x, "_Ogor1.0.g.vcf.gz \\", sep = ""),
     "-R $ASSEMBLY \\",
     "-ERC GVCF \\",
     "-L ${line[0]} &",
     "done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt",
     "wait",
+    "",
+
+    "cd /scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/06_hap_calls",
+    "",
+    "bcftools concat -Oz \\",
+    paste("CM029847.1_",x,"_Ogor1.0.g.vcf.gz CM029861.1_",x,"_Ogor1.0.g.vcf.gz CM029848.1_",x,"_Ogor1.0.g.vcf.gz CM029862.1_",x,"_Ogor1.0.g.vcf.gz \\", sep =""),
+    paste("CM029849.1_",x,"_Ogor1.0.g.vcf.gz CM029863.1_",x,"_Ogor1.0.g.vcf.gz CM029850.1_",x,"_Ogor1.0.g.vcf.gz CM029864.1_",x,"_Ogor1.0.g.vcf.gz \\", sep =""),
+    paste("CM029851.1_",x,"_Ogor1.0.g.vcf.gz CM029865.1_",x,"_Ogor1.0.g.vcf.gz CM029852.1_",x,"_Ogor1.0.g.vcf.gz CM029866.1_",x,"_Ogor1.0.g.vcf.gz \\", sep =""),
+    paste("CM029853.1_",x,"_Ogor1.0.g.vcf.gz CM029867.1_",x,"_Ogor1.0.g.vcf.gz CM029854.1_",x,"_Ogor1.0.g.vcf.gz CM029868.1_",x,"_Ogor1.0.g.vcf.gz \\", sep =""),
+    paste("CM029855.1_",x,"_Ogor1.0.g.vcf.gz CM029869.1_",x,"_Ogor1.0.g.vcf.gz CM029856.1_",x,"_Ogor1.0.g.vcf.gz CM029870.1_",x,"_Ogor1.0.g.vcf.gz \\", sep =""),
+    paste("CM029857.1_",x,"_Ogor1.0.g.vcf.gz CM029871.1_",x,"_Ogor1.0.g.vcf.gz CM029858.1_",x,"_Ogor1.0.g.vcf.gz CM029872.1_",x,"_Ogor1.0.g.vcf.gz \\", sep =""),
+    paste("CM029859.1_",x,"_Ogor1.0.g.vcf.gz CM029873.1_",x,"_Ogor1.0.g.vcf.gz CM029860.1_",x,"_Ogor1.0.g.vcf.gz > ",x,"_Ogor1.0_hapcalls.g.vcf.gz", sep =""),
+    "",
+    paste("tabix --csi ",x,"_Ogor1.0_hapcalls.g.vcf.gz", sep =""),
     ""
-    
-    # "cd /scratch/bell/sparks35/GL_Pink_Salmon/data/seqs/aligned_reads_Ogor1.0/06_hap_calls",
-    # "",
-    # "bcftools concat -Oz \\",
-    # paste("CM029847.1_",x,"_Ogor1.0.vcf.gz CM029861.1_",x,"_Ogor1.0.vcf.gz CM029848.1_",x,"_Ogor1.0.vcf.gz CM029862.1_",x,"_Ogor1.0.vcf.gz \\", sep =""),
-    # paste("CM029849.1_",x,"_Ogor1.0.vcf.gz CM029863.1_",x,"_Ogor1.0.vcf.gz CM029850.1_",x,"_Ogor1.0.vcf.gz CM029864.1_",x,"_Ogor1.0.vcf.gz \\", sep =""),
-    # paste("CM029851.1_",x,"_Ogor1.0.vcf.gz CM029865.1_",x,"_Ogor1.0.vcf.gz CM029852.1_",x,"_Ogor1.0.vcf.gz CM029866.1_",x,"_Ogor1.0.vcf.gz \\", sep =""),
-    # paste("CM029853.1_",x,"_Ogor1.0.vcf.gz CM029867.1_",x,"_Ogor1.0.vcf.gz CM029854.1_",x,"_Ogor1.0.vcf.gz CM029868.1_",x,"_Ogor1.0.vcf.gz \\", sep =""),
-    # paste("CM029855.1_",x,"_Ogor1.0.vcf.gz CM029869.1_",x,"_Ogor1.0.vcf.gz CM029856.1_",x,"_Ogor1.0.vcf.gz CM029870.1_",x,"_Ogor1.0.vcf.gz \\", sep =""),
-    # paste("CM029857.1_",x,"_Ogor1.0.vcf.gz CM029871.1_",x,"_Ogor1.0.vcf.gz CM029858.1_",x,"_Ogor1.0.vcf.gz CM029872.1_",x,"_Ogor1.0.vcf.gz \\", sep =""),
-    # paste("CM029859.1_",x,"_Ogor1.0.vcf.gz CM029873.1_",x,"_Ogor1.0.vcf.gz CM029860.1_",x,"_Ogor1.0.vcf.gz > ",x,"_Ogor1.0_hapcalls.vcf.gz", sep =""),
-    # "",
-    # paste("tabix --csi ",x,"_Ogor1.0_hapcalls.vcf.gz", sep =""),
-    # "",
-    # paste("rm -rf CM*",x,"*", sep = "")
   )
   
   writeLines(file_1, paste("hapcall_",x,".sh", sep = ""))

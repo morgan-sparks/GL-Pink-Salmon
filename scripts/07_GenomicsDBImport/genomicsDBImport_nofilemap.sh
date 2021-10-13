@@ -149,6 +149,7 @@ do
 -V $HAPCALLS/${line[0]}_STL_328_Ogor1.0.g.vcf.gz \
 -V $HAPCALLS/${line[0]}_STL_331_Ogor1.0.g.vcf.gz \
 --genomicsdb-workspace-path $PROJHOME/data/seqs/aligned_reads_Ogor1.0/07_genomicsDB/${line[0]}_database \
+-L ${line[0]} \
 --batch-size 50 \
 --tmp-dir tmpdir \
 --reader-threads 4 &

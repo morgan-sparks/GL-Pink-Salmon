@@ -18,7 +18,7 @@ do
 --tmp-dir tmpdir \
 --sample-name-map $PROJHOME/scripts/07_GenomicsDBImport/genomicsDB2.txt \
 -L ${line[0]} \
---read-index sample_inxdexes \
+--read-index $PROJHOME/scripts/07_GenomicsDBImport/sample_inxdexes \
 --reader-threads 4 &
 done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list.txt
 wait

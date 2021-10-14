@@ -152,6 +152,7 @@ do
 -L ${line[0]} \
 --batch-size 50 \
 --tmp-dir tmpdir \
+--genomicsdb-shared-posixfs-optimizations true \
 --reader-threads 4 &
 done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list_15_21.txt
 wait

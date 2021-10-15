@@ -20,6 +20,6 @@ do
 -R $ASSEMBLY \
 -V gendb://$GENOMICSDB/odd_2yrs/${line[0]}_genomicsDatabase \
 -L ${line[0]} \
--O $OUT/${line[0]}.vcf.gz
+-O $OUT/${line[0]}.vcf.gz &
 done < $PROJHOME/data/seqs/aligned_reads_Ogor1.0/chromosome_list_15_21.txt
 wait

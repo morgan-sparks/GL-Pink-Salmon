@@ -1,0 +1,44 @@
+Interactive vcftools popgen
+
+## create VCF with only hard filtered varients [done in interactive session]
+
+#module load samtools/1.12
+#module load vcftools/0.1.16
+
+bcftools view -i 'FILTER="PASS"' LAO_STL2yrOdd_PASS_hardfiltered_snps.vcf > LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf
+
+## filter on MAF >/= 0.051 (allele shared at a site on 3/59 inviduals)
+vcftools --vcf LAO_STL2yrOdd_PASS_hardfiltered_snps.vcf --maf 0.051 --recode --recode-INFO-all --out _MAF3ind
+
+
+## depth stats
+
+#individual depth
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --depth --out individualDepth
+
+#site mean depth
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --site-mean-depth --out siteMeanDepth
+
+
+## heterozygosity measures
+
+#individual heterozygosity
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --het --out indvidualHeterozygosity
+	## to interpret, see https://www.biostars.org/p/266502/
+
+
+## Fst calcs
+
+#per site Fst
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --weir-fst-pop LAO_samples.txt --weir-fst-pop STL2yrOdd_samples.txt --out LAOvsSTL2yrOdd_allSitesMAFfilt
+
+# Fst, 100 KB windows with 50 KB steps
+
+
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --weir-fst-pop LAO_samples.txt --weir-fst-pop STL2yrOdd_samples.txt  --fst-window-size 100000 --fst-window-step 50000 --out LAO_het_100kb50kb
+
+## Tajimas D
+
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --TajimaD 10000 --keep LAO_samples.txt --out LAO_TajD_10kbWind
+
+vcftools --vcf LAO_STL2yrOdd_PASS_MAF3ind_hardfiltered_snps.vcf --TajimaD 10000 --keep STL2yrOdd_samples.txt --out STL2yr_TajD_10kbWind
